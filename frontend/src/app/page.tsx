@@ -13,6 +13,11 @@ export default function Home() {
       name: "Designer Leather Boots", 
       price: 89.50, 
       imageUrl: "/placeholder-product.jpg" 
+    },
+    { 
+      name: "Vintage Chanel Silk Scarf", 
+      price: 125.00, 
+      imageUrl: "/placeholder-product.jpg" 
     }
   ]
   return (
