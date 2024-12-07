@@ -1,8 +1,35 @@
 import Image from "next/image";
+import ProductCard from '@/components/ProductCard'
 
 export default function Home() {
+
+  const products = [
+    { 
+      name: "Vintage Denim Jacket", 
+      price: 45.99, 
+      imageUrl: "/placeholder-product.jpg" 
+    },
+    { 
+      name: "Designer Leather Boots", 
+      price: 89.50, 
+      imageUrl: "/placeholder-product.jpg" 
+    },
+    { 
+      name: "Vintage Chanel Silk Scarf", 
+      price: 125.00, 
+      imageUrl: "/placeholder-product.jpg" 
+    }
+  ]
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {products.map((product, index) => (
+        <ProductCard 
+          key={index}
+          name={product.name}
+          price={product.price}
+          imageUrl={product.imageUrl}
+        />
+      ))}
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
